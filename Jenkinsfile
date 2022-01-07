@@ -8,6 +8,26 @@ pipeline {
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
+        stage('Unit Test') {
+            steps {
+                echo 'Running Unit Test'
+            }
+        }
+        stage('Static Code Analysis') {
+            steps {
+                echo 'Running Static Code Analysis'
+            }
+        }
+        stage('Code Coverage') {
+            steps {
+                echo 'Running Code Coverage'
+            }
+        }
+        stage('Regression Testing') {
+            steps {
+                echo 'Running Regression Testing' 
+            }
+        }
         stage('DeployToStaging') {
             when {
                 branch 'master'
